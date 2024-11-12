@@ -1,0 +1,25 @@
+<view class=" flex padding margin justify-center text-lg text-bold " bindtap="BossRecommend">
+  <text class="flex-sub  text-center"> 请选择要评论的商品 ></text>
+</view>
+<view style="height: 200rpx;">
+
+</view>
+<view class="cu-list  bg-white padding margin">
+  <view class="cu-item " wx:for="{{goods}}" wx:key="item" style="height: 200rpx;">
+    <view class="padding-lr-sm flex" bindtap="tocomment" data-id="{{item.id}}" data-id2="{{item._id}}">
+      <view class="padding-lr-sm" style="width: 100%;">
+        <view class="text-lg text-bold text-black text-cut" style="width: 420rpx;">{{item.name}}</view>
+        <view class="text-sm padding-top-sm">{{item.des}}</view>
+        <view class="flex  padding-top-sm">
+          <view class="text-red text-bold ">活动价：￥{{item.price}}</view>
+          <view class="text-grey text-s padding-lr">原价：￥{{item.oldprice}}</view>
+
+        </view>
+      </view>
+      <view class="bg-gray">
+        <image class="radius" style="height: 160rpx;width: 156rpx;" src="{{item.images[0]}}" mode="scaleToFill"></image>
+      </view>
+    </view>
+
+  </view>
+</view>

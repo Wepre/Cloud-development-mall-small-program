@@ -1,0 +1,23 @@
+<view class="bg-white cu-list menu-avatar">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{pinglun}}" wx:key="item" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" style="height: 200rpx;">
+      <view class="padding-lr-sm flex">
+     
+        <view class="bg-gray">
+          <image class="radius" style="height: 160rpx;width: 156rpx;" src="{{item.goodinfo[0].images[0]}}" mode="scaleToFill"></image>
+        </view>
+        <view class="padding-lr-sm" style="width: 100%;">
+          <view class="text-lg text-black text-cut" style="width: 420rpx;">{{item.goodinfo[0].name}}</view>
+          <view class="text-sm padding-top-sm">评论内容：{{item.comment}}</view>
+          <view class="flex justify-between padding-top-sm">
+            <view class="text-red">￥{{item.goodinfo[0].price}}</view>
+            <view class="flex justify-center align-center text-lg" catchtap="nothing">
+              
+              <view class="margin-lr text-red" bindtap="cancle" data-id="{{item._id}}">取消评论</view>
+              
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>

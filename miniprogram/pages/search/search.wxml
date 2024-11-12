@@ -1,0 +1,19 @@
+<view class="cu-list  bg-white padding">
+  <view class="cu-item " wx:for="{{List}}" wx:key="item" style="height: 200rpx;">
+    <view class="padding-lr-sm flex" bindtap="goToProduct" data-id="{{item._id}}">
+      <view class="padding-lr-sm" style="width: 100%;">
+        <view class="text-lg text-bold text-black text-cut" style="width: 420rpx;">{{item.name}}</view>
+        <view class="text-sm padding-top-sm">{{item.des}}</view>
+        <view class="flex  padding-top-sm">
+          <view class="text-red text-bold ">活动价：￥{{item.price}}</view>
+          <view class="text-grey text-s padding-lr">原价：￥{{item.oldprice}}</view>
+
+        </view>
+      </view>
+      <view class="bg-gray">
+        <image class="radius" style="height: 160rpx;width: 156rpx;" src="{{item.images[0]}}" mode="scaleToFill"></image>
+      </view>
+    </view>
+
+  </view>
+</view>

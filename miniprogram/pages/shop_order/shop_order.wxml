@@ -1,0 +1,58 @@
+<view>
+  <view class="top">
+    <view>
+      订单配送至
+      <view>{{array.address_leixing}}</view>
+    </view>
+    <view>{{array.address}}</view>
+    <view>{{array.name}} {{array.phoneNum}}</view>
+  </view>
+  <!-- <view class="buju">
+    <view class="bold">送达时间</view>
+    <view class="small">预计送达时间</view>
+  </view> -->
+  <view class="fenge">
+    <view class="buju">
+      <view class="bold">优惠券</view>
+      <view class="small text-red">{{youhui}}</view>
+    </view>
+
+  </view>
+
+  <view class="fenge">
+    <view class="buju">
+      <view class="bold">商品</view>
+      <view class="bold right">{{product.length||1}}件</view>
+    </view>
+    <view class="show padding" wx:for="{{product}}" wx:key="index">
+      <view class="tu">
+        <view class="bg-gray" bindtap="todetail" data-id="{{item.id}}">
+          <image class="radius" style="height: 160rpx;width: 156rpx;" src="{{item.images[0]}}" mode="scaleToFill"></image>
+        </view>
+        <view class="tutext">
+          <view>{{item.name}}</view>
+          <view>￥{{item.price}}</view>
+        </view>
+      </view>
+      <view>x{{item.num}}</view>
+    </view>
+  </view>
+  <!-- <view class="buju">
+    <view class="left">总价</view>
+    <view class="right">￥{{allMoney}}</view>
+  </view>
+  <view class="buju">
+    <view class="left">配送费</view>
+    <view class="right">￥0</view>
+  </view> -->
+  <view class="buju">
+    <view class="bold">合计</view>
+    <view class="right">￥{{allMoney}}</view>
+  </view>
+  <view class="buju bold bottom">
+    <view>合计
+      <view class="qian">￥{{allMoney}}</view>
+    </view>
+    <view class="zhifu" bindtap="pay">去支付</view>
+  </view>
+</view>

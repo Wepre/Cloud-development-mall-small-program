@@ -1,0 +1,19 @@
+
+@import "./colorui/main.wxss";
+@import "./colorui/icon.wxss";
+@import "./colorui/icon-new.wxss";
+@import "./colorui/animation.wxss";
+@import "./colorui/dark.wxss";
+
+/* 自定义导航
+.nav {
+  width: 100%;
+  overflow: hidden;
+  /* position: fixed; */
+  /* top: 0;
+  left: 0; */
+  /* z-index: 10; */
+  /* background: green; */
+/* 
+}
+  */ 

@@ -1,0 +1,54 @@
+<view class="head">
+  <view class="user" bindtap="toalter">
+    <image type="userAvatarUrl" mode="aspectFit" class="img" src="{{msg.image}}"></image>
+    <text type="userNickName" lang="zh_CN" class="name">{{msg.name}}</text>
+  </view>
+  <view class="classify">
+    <!-- <view class="body">
+      <image src="./img/img_1.png"></image>
+      <text>待支付</text>
+    </view> -->
+    <view class="body" bindtap="toOrder" data-name="待收货">
+      <image src="./img/img_2.png"></image>
+      <text>待收货</text>
+    </view>
+    <view class="body" bindtap="toOrder" data-name="已完成">
+      <image src="./img/img_3.png"></image>
+      <text>已完成</text>
+    </view>
+    <view class="body" bindtap="toOrder" data-name="全部订单">
+      <image src="./img/img_4.png"></image>
+      <text>全部订单</text>
+    </view>
+  </view>
+</view>
+<view class="cu-list menu sm-border margin-top" style="margin-top: 200rpx;">
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <navigator url="../address/address" class="text-grey">收货地址</navigator>
+    </view>
+
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <navigator url="../mycomment/mycomment" class="text-grey">我的评论</navigator>
+    </view>
+
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <navigator url="../youhui/mine" class="text-grey">优惠券</navigator>
+    </view>
+
+  </view>
+  <view class="cu-item ">
+    <view class="content">
+
+      <button class="text-grey text-s " open-type="contact" style="width:30%">客服</button>
+    </view>
+
+  </view>
+</view>

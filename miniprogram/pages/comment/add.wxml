@@ -1,0 +1,42 @@
+<form bindsubmit="submit">
+  <view class="cu-list  bg-white padding">
+    <view class="cu-item " wx:key="item" style="height: 200rpx;">
+      <view class="padding-lr-sm flex" bindtap="goToProduct" data-id="{{res._id}}">
+        <view class="padding-lr-sm" style="width: 100%;">
+          <view class="text-lg text-bold text-black text-cut" style="width: 420rpx;">{{res.name}}</view>
+          <view class="text-sm padding-top-sm">{{res.des}}</view>
+          <view class="flex  padding-top-sm">
+            <view class="text-red text-bold ">活动价：￥{{res.price}}</view>
+            <view class="text-grey text-s padding-lr">原价：￥{{res.oldprice}}</view>
+
+          </view>
+        </view>
+        <view class="bg-gray">
+          <image class="radius" style="height: 160rpx;width: 156rpx;" src="{{res.images[0]}}" mode="scaleToFill"></image>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="padding text-xxl flex align-center  bg-white radius-df">
+    <view>
+      <text>评分：</text>
+    </view>
+    <view wx:for="{{count}}" bindtap="click" data-index="{{index}}" wx:key="item">
+      <text class="{{index > active ? 'cuIcon-favor' : 'cuIcon-favorfill'}} {{extraClass}} text-red"></text>
+    </view>
+    <view class="margin-left">
+      <text class="text-xxl text-red">{{active+1}}星</text>
+    </view>
+  </view>
+  <view class="bg-white padding" style="height: 400rpx;">
+    <textarea name='comment' type="text" style="height: 400rpx;" placeholder="请输入评论"  value="{{commentinfo.comment}}"/>
+  </view>
+  <view class="cu-bar btn-group" wx:if="{{!iscomment}}">
+    <button class="cu-btn bg-green shadow-blur round lg" form-type="submit">提交</button>
+  </view>
+  <view class="cu-bar btn-group" wx:if="{{iscomment}}">
+    <button class="cu-btn bg-grey shadow-blur round lg" >已评论</button>
+  </view>
+</form>

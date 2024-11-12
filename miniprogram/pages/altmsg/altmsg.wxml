@@ -1,0 +1,59 @@
+<!-- 用点击上传自己用户头像的 -->
+
+<form bindsubmit="save">
+  <view class="flex align-center justify-center" style="height: 500rpx;background-color:#f2f2f2 ;">
+    <view>
+      <button open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <image  src="{{res.image}}" style="width: 200rpx;border-radius: 20rpx;" mode="widthFix"></image>
+      
+      </button>
+      <view class="text-center text-bold text-l padding-s">{{res.name}}</view>
+    </view>
+  </view>
+  <view class="cu-list menu sm-border card-menu margin-top">
+    <view class="cu-item arrow">
+      <view class="content">
+
+        <text class="text-grey">昵称</text>
+      </view>
+      <view class="action text-right">
+        <input type="nickname" class="weui-input" name="name" value="{{res.name}}" placeholder="请输入昵称" />
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <view class="content">
+
+        <text class="text-grey">手机号</text>
+      </view>
+      <view class="action text-right">
+        <input type="text" class="weui-input" name="phone" value="{{res.phone}}" placeholder="请输入手机号" />
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+
+        <text class="text-grey">微信绑定</text>
+      </view>
+      <view class="action">
+        <text class="text-orange text-m">已绑定</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+
+        <text class="text-grey">申请注销账户</text>
+      </view>
+
+    </view>
+  </view>
+  <view class=" flex align-center flex-column  margin-sm radius-lg">
+    <button class="cu-btn bg-green lg" style="width: 70%;" form-type="submit">保存信息</button>
+
+  </view>
+</form>
+<view class=" flex align-center flex-column  margin-sm radius-lg">
+  <button class="cu-btn bg-orange lg" style="width: 70%;" bind:tap="exit">退出登录</button>
+
+</view>
+<view style="height: 100rpx;"></view>

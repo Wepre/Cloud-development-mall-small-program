@@ -1,0 +1,33 @@
+<view class="body">
+  <view class="product" wx:for="{{array}}" wx:key="index">
+    <checkbox-group bindchange="checked" class="left" data-id="{{item._id}}">
+      <checkbox value="{{item.checked}}" checked="{{item.checked}}"></checkbox>
+    </checkbox-group>
+    <!-- <image src="{{item.images[0]}}" ></image>
+     -->
+    <view class="bg-gray" bindtap="todetail" data-id="{{item.id}}">
+      <image class="radius" style="height: 160rpx;width: 156rpx;" src="{{item.images[0]}}" mode="scaleToFill"></image>
+    </view>
+    <view class="middle">
+      <text class="text_top">{{item.name}}</text>
+      <text class="text_middle">{{item.brief}}</text>
+      <text class="text_bottom">￥{{item.price}}</text>
+    </view>
+    <view class="right">
+      <text class="right_left" bindtap="reduce" data-id="{{item._id}}">-</text>
+      <text class="right_middle">{{item.num}}</text>
+      <text class="right_right" bindtap="add" data-id="{{item._id}}">+</text>
+    </view>
+  </view>
+</view>
+<view class="cu-bar btn-group margin">
+  <button bindtap="deleteAll" class="cu-btn bg-green shadow-blur round lg">清空购物车</button>
+</view>
+
+<view class="bottom">
+  <view class="bottom_left">
+    <!-- <switch>全选</switch> -->
+    <text>￥{{Money}}</text>
+  </view>
+  <view class="bottom_right" bindtap="jiesuan">去结算</view>
+</view>

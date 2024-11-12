@@ -1,0 +1,37 @@
+<view class="margin-sm radius-lg">
+  <view class="bg-white radius-lg">
+    <view class="bg-img padding-sm radius-lg" style="background-image: url('https://cdn.nlark.com/yuque/0/2019/jpeg/285274/1552962638649-assets/web-upload/25d4b7d6-e41b-431d-9b5b-43fa3b575b39.jpeg');height: 320rpx;">
+      <view class="padding-sm text-white">
+        <view class="padding-xs text-xl">
+          15元可用优惠券
+        </view>
+        <view class="padding-xs">
+          使用时间不限
+        </view>
+        <view class="flex align-end padding-xs padding-left justify-end padding-top-xxl">
+          <view class="bg-yellow light padding-xs margin-xs radius">
+            <text class="text-brown" bindtap='getid' data-num="{{15}}">点击领取</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bg-white radius-lg margin-top">
+    <view class="bg-img padding-sm radius-lg" style="background-image: url('https://cdn.nlark.com/yuque/0/2019/jpeg/280373/1551799188571-assets/web-upload/9d73921e-c4e4-4231-a07a-4caca0d26b64.jpeg');height: 320rpx;">
+      <view class="padding-sm text-orange">
+        <view class="padding-xs text-xl">
+          40元可用优惠券
+        </view>
+        <view class="padding-xs">
+          使用时间不限
+        </view>
+        <view class="flex align-end padding-xs padding-left justify-end padding-top-xxl">
+          <view class="bg-yellow light padding-xs margin-xs radius">
+            <text class="text-brown" bindtap='getid' data-num="{{40}}">点击领取</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

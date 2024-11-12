@@ -1,0 +1,89 @@
+<!-- <view class='nav' style='height:{{navH}}px'>
+首页
+</view> -->
+
+<!--搜索框 -->
+<view class="head">
+  <input placeholder="30分钟极速达" bindinput="value"></input>
+  <image src="../images/search.png" bindtap="search"></image>
+</view>
+<!-- 搜索结果 -->
+<view class="search" hidden="{{!searching}}">
+  <view class="search_product" wx:for="{{search_product}}" wx:key="index" data-id="{{item._id}}" bindtap="goToProduct">
+    <view class="left">
+      <image src="{{item.images[0]}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+    <text class="right">￥{{item.price}}</text>
+  </view>
+</view>
+<!-- 轮播图 -->
+<swiper indicator-active-color="green" indicator-dots="true" autoplay="true" interval="2000" indicator-color="white" style="">
+  <swiper-item wx:for="{{lunbo}}">
+    <image src="{{item}}" mode="widthFix" bindload="setContainerHeight" class="auto-img"></image>
+  </swiper-item>
+
+</swiper>
+<!-- 宫格分类入口 -->
+<view class="container">
+  <view class="body" wx:for="{{array}}" wx:key="index" data-name="{{item.name}}" bindtap="selectName">
+    <image src="{{item.img}}"></image>
+    <text>{{item.name}}</text>
+  </view>
+
+</view>
+<!-- 优惠券 -->
+<view class="margin-top-sm padding-lr-sm">
+    <view class="bg-brown light radius-lg shadow-blur">
+      <view class="flex padding-tb-sm padding-lr-sm justify-between">
+        <view class="padding-xs">
+          <view>15优惠券 40优惠券 惊喜连连</view>
+        </view>
+        <view class="">
+          <navigator url="../youhui/list" class="cu-btn round bg-brown">领取优惠券</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+<!-- 优选好物 -->
+<view class="tuijian text-lg text-bold " bindtap="BossRecommend">
+  优选好物 >
+</view>
+<!-- 这里是左文字右图片 -->
+<view class="cu-list  bg-white padding-lr">
+  <view class="cu-item " wx:for="{{List}}" wx:key="item" style="height: 200rpx;">
+    <view class="padding-lr-sm flex" bindtap="goToProduct" data-id="{{item._id}}">
+      <view class="padding-lr-sm" style="width: 100%;">
+        <view class="text-lg text-bold text-black text-cut" style="width: 420rpx;">{{item.name}}</view>
+        <view class="text-sm padding-top-sm">{{item.des}}</view>
+        <view class="flex  padding-top-sm">
+          <view class="text-red text-bold ">活动价：￥{{item.price}}</view>
+          <view class="text-grey text-s padding-lr">原价：￥{{item.oldprice}}</view>
+
+        </view>
+      </view>
+      <view class="bg-gray">
+        <image class="radius" style="height: 160rpx;width: 156rpx;" src="{{item.images[0]}}" mode="scaleToFill"></image>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 这里有四个 -->
+<van-tabs active="{{ active }}" class="padding" bind:change="onChange">
+  <van-tab wx:for="{{array}}" wx:for-item="tabitem" title="{{tabitem.name}}">
+    <!-- 这里是内容 -->
+    <view class="tuijian_1">
+      <view class="product padding" wx:for="{{List}}" wx:if="{{item.kind==tabitem.name}}" wx:key="index">
+        <image src="{{item.images[0]}}" style="height: 120rpx;" bindtap="goToProduct" data-id="{{item._id}}"></image>
+        <text class="name">{{item.name}}</text>
+        <text class="price text-red text-bold">活动价：￥{{item.price}}</text>
+        <text class="add" bindtap="addToShop" data-item="{{item}}">+购物车</text>
+      </view>
+
+    </view>
+
+  </van-tab>
+
+</van-tabs>

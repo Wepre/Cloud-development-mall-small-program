@@ -1,0 +1,87 @@
+<!-- 商品图片 -->
+<swiper class=" screen-swiper " indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{array.images}}" wx:key="item">
+    <image src="{{item}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+<view class="bg-white flex padding-sm justify-between">
+  <view class="padding-xs text-xl text-black">
+    <view>{{array.name}}</view>
+
+  </view>
+  <view class="flex align-center padding-lr-sm text-lg">
+    <view class="cuIcon-share padding-right-xs text-pink"></view>
+    <text class="text-df">品牌直营</text>
+  </view>
+</view>
+<view class="text">
+
+  <!-- 商品价格 -->
+  <text style="margin:10rpx 0 20rpx 0;font-weight:bold;color:#f00;font-size:40rpx">￥{{array.price}}<text class="padding-lr text-grey text-bold text-s" style="font-size: 25rpx;">原价：￥{{array.oldprice}}</text></text>
+
+  <!-- 商品描述 -->
+  <text style="margin: 0 0 20rpx 0;font-size:32rpx;color:gray">{{array.brief}}</text>
+  <!-- 商品库存和销量 -->
+  <!-- <view class="text_bottom">
+    <text style="font-size:26rpx">库存:{{array.kucun}}</text>
+    <text style="margin-right:30rpx">销量:999</text>
+  </view> -->
+</view>
+<view class="bg-white solid-bottom">
+  <view class="flex padding-sm justify-between">
+    <view class="padding-xs text-lg text-black">
+      详情介绍
+    </view>
+  </view>
+</view>
+
+<view class=" bg-white  flex " wx:key="item">
+  <view class=" margin-xxl flex-sub text-bold text-center">
+    {{array.detail}}
+  </view>
+</view>
+<view class="body">
+  <view class="body_top">
+    <view class="body_top_left" bindtap="select" data-id="left" style="font-weight:bold">
+      <text>评论区</text>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="body_middle">
+    <view class="img_text">
+      <image src="./img/pinglun.png"></image>
+      <text>共{{pinglun.length}}条评论</text>
+    </view>
+    <view class="pinglun_middle">
+      <view class="neirong" wx:for="{{pinglun}}" wx:key="index">
+        <image src="{{item.userinfo[0].image}}"></image>
+        <view class="texts">
+          <view class="name_time">
+            <text style="color:orange;font-size:30rpx">{{item.userinfo[0].name}}</text>
+            <text style="color:gray;font-size:25rpx;margin-left:10rpx">{{item.time}}</text>
+          </view>
+          <text class="neirong_value">{{item.comment}}</text>
+          <view wx:if="{{item.reply}}">
+            <view class="name_time" >
+            <text style="color:orange;font-size:30rpx">商家回复</text>
+            <text style="color:gray;font-size:25rpx;margin-left:10rpx"></text>
+          </view>
+          <text class="neirong_value">{{item.reply}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+</view>
+<view style="height: 200rpx;">
+
+</view>
+<view class="bottom">
+  <view class="bottom_left" bindtap="order" data-id="{{array._id}}">
+
+    <text>立即购买</text>
+  </view>
+  <view class="bottom_right" bindtap="addToShopping">加入购物车</view>
+</view>

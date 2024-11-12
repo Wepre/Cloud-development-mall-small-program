@@ -1,0 +1,19 @@
+<view class="margin-sm radius-lg">
+  <view class="bg-white radius-lg padding-tb" wx:for="{{youhui}}">
+    <view class="bg-img padding-sm radius-lg" style="background-image: url('https://cdn.nlark.com/yuque/0/2019/jpeg/285274/1552962638649-assets/web-upload/25d4b7d6-e41b-431d-9b5b-43fa3b575b39.jpeg');height: 320rpx;">
+      <view class="padding-sm text-white">
+        <view class="padding-xs text-xl">
+          {{item}}元可用优惠券
+        </view>
+        <view class="padding-xs">
+         请尽快使用哦
+        </view>
+        <view class="flex align-end padding-xs padding-left justify-end padding-top-xxl">
+       
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
